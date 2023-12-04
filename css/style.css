@@ -1,0 +1,77 @@
+/* inisialisi warna */
+:root {
+  --primary: #b6895b;
+  --bg: #010101;
+}
+
+/* Reset all selector*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none; /*supaya tidak ada garis bawa ketika membuat link */
+}
+
+/* body */
+body {
+  font-family: sans-serif;
+  background-color: var(--bg);
+  color: #fff; /* warna font */
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between; /*sejajar secara horizontal */
+  align-items: center; /*sejajar secara vertikal */
+  padding: 1.4rem 7%; /* 1.4 rem artinya di x 16px dan ukurannya 7% akan diberi selang di setiap ukuran layer */
+  background-color: rgba(1, 1, 1, 0.8);
+  border-bottom: 1px solid #513c28;
+  position: fixed; /* agar posisi navbar tetap di atas */
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+/* logo di navbar */
+.navbar .navbar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  font-style: italic;
+}
+
+/* span di navbar */
+.navbar .navbar-logo span {
+  color: var(--primary);
+}
+
+/* a di navbar */
+.navbar .navbar-nav a {
+  color: #fff;
+  display: inline-block; /* karna defaultnya a inline,utk bisa beri margin maka di ganti */
+  font-size: 1.3rem;
+  margin: 0 1rem;
+}
+
+/* Ketika di sorot navbar-nya */
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+}
+
+/* navbar-nya ada garis bawah di navbar */
+.navbar .navbar-nav a::after {
+  content: '';
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+/* Ketika di sorot navbar-nya baru muncul garis bawahnya */
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
