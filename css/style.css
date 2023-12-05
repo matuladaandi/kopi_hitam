@@ -63,7 +63,7 @@ body {
 
 /* navbar-nya ada garis bawah di navbar */
 .navbar .navbar-nav a::after {
-  content: '';
+  content: "";
   display: block;
   padding-bottom: 0.5rem;
   border-bottom: 0.1rem solid var(--primary);
@@ -74,4 +74,65 @@ body {
 /* Ketika di sorot navbar-nya baru muncul garis bawahnya */
 .navbar .navbar-nav a:hover::after {
   transform: scaleX(0.5);
+}
+/* hamburger-menu atau garis 3 lapis sebelah kanan */
+#hamburger-menu {
+  display: none;
+}
+
+/* Media Queries */
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+  /* agar humberger menu nya muncul */
+  #hamburger-menu {
+    display: inline-block;
+  }
+
+  /* agar sidebar muncul ke kanan */
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;  /* agar keluar dari layar */
+    background-color: #fff;
+    width: 30rem;
+    height: 100vh;    /* tingginya memenuhi layar */
+    transition: 0.3s;
+  }
+
+  /* ketika navbar menu di klik */
+  .navbar .navbar-nav.active{
+    right: 0  ;
+  }
+
+  /* menu2 nya */
+  .navbar .navbar-nav a {
+    color: var(--bg);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.2);
+  }
+}
+
+/* Mobile Phone */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
 }
