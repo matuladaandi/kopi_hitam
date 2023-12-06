@@ -19,6 +19,7 @@ body {
   font-family: sans-serif;
   background-color: var(--bg);
   color: #fff; /* warna font */
+  /* min-height: 2000px; */
 }
 
 /* Navbar */
@@ -80,6 +81,69 @@ body {
   display: none;
 }
 
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("../img/header-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  background-color: linear-gradient(
+    0deg,
+    rgba(1, 1, 3, 1) 8%,
+    rgba(255, 255, 255, 0) 50%
+  );
+}
+
+.hero .content {
+  padding: 1.4rem 7%;
+  max-width: 60rem;
+}
+
+.hero .content h1 {
+  font-size: 5em;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  line-height: 1.2;
+}
+
+.hero .content h1 span{
+  color: var(--primary);
+}
+
+.hero .content p{
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  line-height: 1.4;
+  font-weight: 100;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  mix-blend-mode: difference;  /* agar otomatis kontras warna ketika ketemu warna yang sama */
+  
+}
+
+.hero .content .cta{
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.4rem;
+  color: #fff;
+  background-color: var(--primary);
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 3px rgba(1,1,3,0.5);
+}
+
 /* Media Queries */
 /* Laptop */
 @media (max-width: 1366px) {
@@ -102,16 +166,16 @@ body {
   .navbar .navbar-nav {
     position: absolute;
     top: 100%;
-    right: -100%;  /* agar keluar dari layar */
+    right: -100%; /* agar keluar dari layar */
     background-color: #fff;
     width: 30rem;
-    height: 100vh;    /* tingginya memenuhi layar */
+    height: 100vh; /* tingginya memenuhi layar */
     transition: 0.3s;
   }
 
   /* ketika navbar menu di klik */
-  .navbar .navbar-nav.active{
-    right: 0  ;
+  .navbar .navbar-nav.active {
+    right: 0;
   }
 
   /* menu2 nya */
